@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<title>Consultar usuarios</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/api.js"></script>
+</head>
+
+<body>
+<p><h1>Buscar usuarios en el sistema</h2></p>
+<p><h2>Ingrese el documento del usuario</h2></p>
+<p><input type="text" id="documento" name="documento"><br></p>
+
+<div class="col-sm-12 col-xs-12">
+	<button class="btn btn-default" onclick="api.getUsuarios();" type="button">Buscar Todos</button>
+	<button class="btn btn-default" onclick="api.getUsuario();" type="button">Buscar</button>
+</div>
+
+<p> </p>
+<table id="Tabla" class=table border="1">
+    <tr id="fila0">
+      <td>Nombre</td>
+      <td>Apellido</td>
+      <td>Documento</td>
+      <td>Tel&eacute;fono</td>
+    </tr>
+</table>
+
+<img src="usuarios.png" class="imagen">
+
+</body>
+</html>
