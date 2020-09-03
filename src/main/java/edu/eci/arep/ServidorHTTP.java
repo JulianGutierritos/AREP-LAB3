@@ -15,7 +15,7 @@ public class ServidorHTTP {
     private final String[] multimedia = {"png", "jpg", "mp3"};
 
     public ServidorHTTP (){
-        this.port = 36000; 
+        this.port = getPort(); 
         this.correr = true; 
     }
 
@@ -135,5 +135,12 @@ public class ServidorHTTP {
             extension = part[part.length - 1];
         }
         return extension;
+    }
+
+    static int getPort() {
+        if (System.getenv("PORT") != null) {
+        return Integer.parseInt(System.getenv("PORT"));
+        }
+        return 36000; //returns default port if heroku-port isn't set (i.e. on localhost)
     }
 }
