@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.eci.arep</groupId>
-	<artifactId>CalculadoraApp</artifactId>
+	<artifactId>MicroSpark</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>CalculadoraApp</name>
-	<description>Calculadora para sacar medias y varianzas</description>
+	<description>MicroSpark</description>
 
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -84,6 +84,22 @@
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>3.2.0</version>
       </plugin>
+	  <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <phase>process-sources</phase>
+
+                            <goals>
+                                <goal>copy-dependencies</goal>
+                            </goals>
+
+                            <configuration>
+                                <outputDirectory>${targetdirectory}</outputDirectory>
+                            </configuration>
+                        </execution>
+                    </executions>
+            </plugin>
     </plugins>
   </build>
 
