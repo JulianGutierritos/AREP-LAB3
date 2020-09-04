@@ -85,7 +85,7 @@ A continuación, se listan los recursos estáticos:
 
 En seguida, se listan los recursos dinámicos que se pueden acceder. Aunque tener en cuenta que estos pueden cambiar si la base de datos es modificada.
 
-- /App/consultarUsuarios
+- /App/getUsuarios
 - /App/getUsuario?id=12345
 - /App/getUsuario?id=67890
 
