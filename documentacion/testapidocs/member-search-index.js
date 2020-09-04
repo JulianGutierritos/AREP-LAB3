@@ -1,1 +1,1 @@
-memberSearchIndex = [{"p":"edu.eci.arep","c":"CalculadoraAppTest","l":"CalculadoraAppTest()","url":"%3Cinit%3E()"},{"p":"edu.eci.arep","c":"CalculadoraAppTest","l":"CalcularMediaYDesviacion1()"},{"p":"edu.eci.arep","c":"CalculadoraAppTest","l":"CalcularMediaYDesviacion2()"},{"p":"edu.eci.arep","c":"CalculadoraAppTest","l":"probarLista()"}]
+memberSearchIndex = [{"p":"edu.eci.arep","c":"ServidorHTTPTest","l":"obtenerUsuarios()"},{"p":"edu.eci.arep","c":"ServidorHTTPTest","l":"ServidorHTTPTest()","url":"%3Cinit%3E()"}]

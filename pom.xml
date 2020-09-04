@@ -5,7 +5,7 @@
 	<groupId>edu.eci.arep</groupId>
 	<artifactId>MicroSpark</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>CalculadoraApp</name>
+	<name>MicroSpark</name>
 	<description>MicroSpark</description>
 
 	<properties>

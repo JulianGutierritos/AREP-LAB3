@@ -7,11 +7,21 @@ import edu.eci.arep.service.impl.UsuarioServiceMyBatis;
 import java.io.*;
 import java.net.*;
 
+/**
+ * Clase encargada de retornar archivos estaticos o dinamicos segun se solicite
+ * @author Julián Gutiérrez
+ * @version 1.0
+ */
 public class SparkJ{
 
     static UsuarioService usuarioService = new UsuarioServiceMyBatis();
 
-
+    /**
+     * Es una funcion, que dada una url, retorna un archivo dinamico o esttico en formato de texto plano 
+     * @param uri String: uri del archivo solicitado
+     * @return String con el archivo escrito en formato de texto plano 
+     * @throws IOException si no encuentra el archivo
+     */
     public static String getFile(String uri) throws IOException {
         URL url = new URL(uri);
         String path = url.getPath();
@@ -78,6 +88,12 @@ public class SparkJ{
         return out;
     }
 
+    /**
+     * Es una funcion, que dada una url, retorna un archivo esttico en formato byte
+     * @param uri String: uri del archivo solicitado
+     * @return byte[] con el archivo escrito en bytes
+     * @throws IOException si no encuentra el archivo
+     */
     public static byte[] getMultimedia(String uri) throws IOException {
         URL url = new URL(uri);
         File archivo = new File ("src/main/resources/static" + url.getPath());
@@ -88,6 +104,10 @@ public class SparkJ{
         return out;
     }
 
+    /**
+     * Es una funcion que retorna la pagina 404, que es la pagina que el sistema da cuando no encuentra un recurso
+     * @return String con el archivo 304.html escrito en texto plano
+     */
     public static String notFound(){
         File archivo = null;
         FileReader fr = null;

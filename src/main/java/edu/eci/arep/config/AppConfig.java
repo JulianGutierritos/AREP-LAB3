@@ -9,10 +9,18 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
+/**
+ * Clase que configura MyBatis para acceder a la informacion de una base de datos externa
+ */
+
 @Configuration
 @MapperScan("edu.eci.arep.myBatis")
 public class AppConfig {
 
+	/**
+	 * Construye un dataSource de la base de datos
+	 * @return DataSource con la sesion de la base de datos
+	 */
 	@Bean
 	public DataSource dataSource() {
         SimpleDriverDataSource sdds = new SimpleDriverDataSource();
@@ -23,11 +31,20 @@ public class AppConfig {
 		return sdds;
 	}
 
+	/**
+	 * Construye un dataSourceTransactionManager
+	 * @return DataSourceTransactionManager con la sesion de la base de datos
+	 */
 	@Bean
 	public DataSourceTransactionManager transactionManager() {
         return new DataSourceTransactionManager(dataSource());
     }
 
+	/**
+	 * Construye una sesion sql 
+	 * @return SqlSessionFactoryBean bean con la sesion de la base de datos
+	 * @throws Exception si la sesion no se pudo crear
+	 */
     @Bean
 	public SqlSessionFactoryBean sqlSessionFactory() throws Exception {
 		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();

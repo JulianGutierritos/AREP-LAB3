@@ -3,7 +3,12 @@ package edu.eci.arep;
 import java.net.*;
 import java.util.Arrays;
 import java.io.*;
- 
+
+/**
+ * Servidor HTTP cuya funcion es recibir, leer y retornar mensajes con el protocolo HTTP o HTTPS 
+ * @author Julián Gutiérrez
+ * @version 1.0
+ */
 public class ServidorHTTP {
 
     private ServerSocket serverSocket;
@@ -14,16 +19,26 @@ public class ServidorHTTP {
 
     private final String[] multimedia = {"png", "jpg", "mp3"};
 
+    /**
+     * Constructor del servidor HTTP
+     */
     public ServidorHTTP (){
         this.port = getPort(); 
         this.correr = true; 
     }
 
+    /**
+     * Constructor del servidor HTTP dado un puerto donde arrancar
+     * @param port int por el cual va a correr el servidor
+     */
     public ServidorHTTP (int port){
         this.port = port;
         this.correr = true;  
     }
 
+    /**
+     * Funcion que sirve para parar el servidor o reanudarlo 
+     */
     public void setCorrer(){
         if (correr){
             correr = false; 
@@ -33,6 +48,11 @@ public class ServidorHTTP {
         }
     }
 
+    /**
+     * Funcion que: abre un socket de servidor y uno de cliente, lee los datos que llegan, llama a funciones para
+     * responder a las peticiones y, finalmente, envia las respuestas al cliente.
+     * @throws IOException si un recurso no es encontrado o leido de manera corecta
+     */
     public void ejecutar() throws IOException {
         while (correr) {
             if (serverSocket == null){
@@ -103,6 +123,11 @@ public class ServidorHTTP {
         serverSocket.close();
     }
 
+    /**
+     * Funcion que dada una extension de un archivo, retorna el encabezado para esa extension
+     * @param extension String del archivo 
+     * @return String con el encabezado 
+     */
     public String getHeader(String extension){
         String header = "";
         if (extension.equals("")){
@@ -128,6 +153,11 @@ public class ServidorHTTP {
         return header;
     }
 
+    /**
+     * Funcion que, dada una ruta, retorna la extension del archivo
+     * @param path: String de la ruta del archivo
+     * @return String con la extension del archivo 
+     */
     private String getExtension(String path){
         String[] part = path.split("\\.");
         String extension = "";
@@ -137,10 +167,14 @@ public class ServidorHTTP {
         return extension;
     }
 
+    /**
+     * Funcion para seleccionar un puerto, ya sea uno seleccionado por defecto o seleccionado por el sistema
+     * @return imt puerto obtenido
+     */
     static int getPort() {
        if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));
         }
-        return 36000; //returns default port if heroku-port isn't set (i.e. on localhost)
+        return 36000; 
     }
 }
