@@ -141,10 +141,10 @@ public class ServidorHTTP {
                 header = "HTTP/1.1 200 OK\r\n" + "Content-Type: text/css\r\n" + "\r\n";
             }
             else if (extension.equals("jpg")){
-                header = "HTTP/1.1 200 OK\r\n" + "Content-Type: image/jpg\r\n";
+                header = "HTTP/1.1 200 OK\r\n" + "Content-Type: image/jpg\r\n" + "\r";
             }
             else if (extension.equals("png")){
-                header = "HTTP/1.1 200 OK\r\n" + "Content-Type: image/png\r\n";
+                header = "HTTP/1.1 200 OK\r\n" + "Content-Type: image/png\r\n" + "\r";
             }
             else if (extension.equals("js")){
                 header = "HTTP/1.1 200 OK\r\n" + "Content-Type: text/javascript\r\n" + "\r\n";
