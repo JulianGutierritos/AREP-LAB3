@@ -41,7 +41,7 @@ Este programa fue diseñado como un prototipo de una implementación de un servi
 
 Se implementó una clase denominada "ServidorHTTP", la cual es la encargada de recibir y enviar mensajes HTTP. La clase "SparkJ" es la que se encarga de buscar los recursos solicitados y retornarlos (siempre y cuando estos existan). La interfaz "UsuarioService" es la que define los métodos necesarios para acceder a los datos de los usuario, mientras que la clase "UsuarioServiceMyBatis" implementa estos métodos accediendo a la base de datos Postgres (esta también esta en los servidores de Heroku) mediante el uso de MyBatis. Debido a que usamos MyBatis para acceder a los datos, fue necesario implementar un Pojo llamado "Usuario", que nos permite transoformar la información de una fila de una tabla, en un objeto de Java.
 
-En el repositorio se encuentra un archivo [Pdf](LAB_03.pdf) que explica más a profundidad el diseño del programa.
+En el repositorio se encuentra un archivo [Pdf](Lab_03.pdf) que explica más a profundidad el diseño del programa.
 
 ## Instrucciones para su compilación, ejecución y generación de documentación ##
 
